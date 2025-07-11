@@ -10,7 +10,6 @@ import Customers from './pages/Customers'
 import EventNPromotion from './pages/EventNPromotion'
 import StoreCenter from './pages/StoreCenter'
 import Loader from './components/Loader'
-import Example from './assets/example'
 
 function App() {
   return (
@@ -19,7 +18,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Landingpage />} />
           <Route path='/loader' element={<Loader />} />
-          <Route path='/example' element={<Example />}/>
           <Route path='/admin' element={<AdminLayout />}>
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="product-management" element={<ProductManagement />} />
