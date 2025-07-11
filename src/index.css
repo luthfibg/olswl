@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import 'tailwindcss';
+@import "flowbite/src/themes/default";
+@plugin 'flowbite-react/plugin/tailwindcss';
+@source '../.flowbite-react/class-list.json';
+@plugin "flowbite/plugin";
+@source "../node_modules/flowbite";
+
+:root {
+  font-family: system-ui, Avenir, Ubuntu, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@theme {
+   --font-ubuntu: "Ubuntu", sans-serif;
+  --color-app-50:  #f3fcf8;
+  --color-app-100: #d8f8eb;
+  --color-app-200: #bdf3de;
+  --color-app-300: #a8ebcf;
+  --color-app-400: #99e8c7;
+  --color-app-500: #9fe2bf; /* base */
+  --color-app-600: #85caa7;
+  --color-app-700: #6db393;
+  --color-app-800: #589d7d;
+  --color-app-900: #417767;
+  --color-app-950: #2b5247;
+}
+
+a:not(.non-common-anchor) {
+  font-weight: 500;
+  color: #60a5fa;
+  text-decoration: inherit;
+}
+
+a:hover:not(.non-common-anchor) {
+  color: #d87c1d;
+  transition: all 0.2s ease-in-out;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  /* min-width: 320px;
+  min-height: 100vh; */
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button:not(.non-btn) {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover:not(.non-btn) {
+  border-color: #60a5fa;
+}
+button:focus:not(.non-btn),
+button:focus-visible:not(.non-btn) {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: light;
+    color: #292929;
+    background-color: #ffffff;
+  }
+  button:not(.non-btn) {
+    background-color: #fff;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #3b3b3b;
+  }
+  button:not(.non-btn) {
+    background-color: transparent;
+  }
+}
