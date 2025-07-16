@@ -5,7 +5,7 @@
 
 .swiper-slide {
   text-align: center;
-  font-size: 58px;
+  /* font-size: 58px; */
   background: #444;
   height: 18rem;
 
@@ -15,6 +15,13 @@
   justify-content: center;
   align-items: center;
   border-radius: 20px;
+  overflow: hidden;
+}
+
+@media(min-width: 768px) and (max-width: 1024px) {
+  .swiper-slide {
+    height: 16rem;
+  }
 }
 
 .swiper-slide img {

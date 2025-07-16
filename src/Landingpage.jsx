@@ -1,6 +1,6 @@
 import NavbarLP from './components/NavbarLP'
 import HeaderLP from './components/HeaderLP';
-import { SparklesIcon, BoltIcon, DevicePhoneMobileIcon, DeviceTabletIcon, MicrophoneIcon, StarIcon, ArrowRightIcon, FireIcon } from '@heroicons/react/24/outline';
+import { ArrowRightIcon, FireIcon } from '@heroicons/react/24/outline';
 import './tablet-custom.css';
 import AdvantagesLP from './components/AdvantagesLP';
 import BestSellerLP from './components/BestSellerLP';
@@ -10,53 +10,18 @@ import freelabel from './assets/freelabel.png';
 import { Link } from 'react-router-dom';
 import TrendingLP from './components/TrendingLP';
 import FooterLP from './components/FooterLP';
+import CategoryLP from './components/CategoryLP';
 
 const Landingpage = () => {
   return (
-    <div className='flex w-screen flex-col lp pb-5'>
+    <div className='flex flex-col lp pb-5 overflow-hidden w-[calc(100vw-0.25rem)] mx-auto'>
     
       <NavbarLP />
       <HeaderLP />
       <AdvantagesLP />
       <BestSellerLP />
-      <div className="flex flex-col justify-center items-center rounded-2xl w-[calc(100%-1rem)] mx-auto sm:w-[calc(100%-2rem)] h-fit xl:h-[21rem] gap-5 mt-15">
-        <div className="title-section">
-          <h3 className='text-center text-2xl font-["Ubuntu"] font-light'>Berdasarkan Kategori</h3>
-        </div>
-        <div className="content-section flex gap-3 w-full h-full">
-          <div className="flex flex-grow rounded-2xl h-full py-10 justify-center items-center gap-3 flex-col dark:bg-[#292929] bg-gray-100">
-            <div className="flex justify-center items-center p-8 rounded-full bg-purple-300 dark:bg-[#3b3b3b]">
-              <SparklesIcon className="w-12 h-12 text-gray-800 dark:text-purple-500" />
-            </div>
-            <h3 className='font-light text-xl text-center'>Aksesori</h3>
-          </div>
-          <div className="flex flex-grow rounded-2xl h-full py-10 gap-3 justify-center items-center flex-col dark:bg-[#292929] bg-gray-100">
-            <div className="flex justify-center items-center p-8 rounded-full bg-purple-300 dark:bg-[#3b3b3b]">
-              <DevicePhoneMobileIcon className="w-12 h-12 text-gray-800 dark:text-purple-500" />
-            </div>
-            <h3 className='font-light text-xl text-center'>Smartphone</h3>
-          </div>
-          <div className="flex flex-grow rounded-2xl h-full py-10 gap-3 justify-center items-center flex-col dark:bg-[#292929] bg-gray-100">
-            <div className="flex justify-center items-center p-8 rounded-full bg-purple-300 dark:bg-[#3b3b3b]">
-              <DeviceTabletIcon className="w-12 h-12 text-gray-800 dark:text-purple-500" />
-            </div>
-            <h3 className='font-light text-xl text-center'>Tablet</h3>
-          </div>
-          <div className="flex flex-grow rounded-2xl h-full py-10 gap-3 justify-center items-center flex-col dark:bg-[#292929] bg-gray-100">
-            <div className="flex justify-center items-center p-8 rounded-full bg-purple-300 dark:bg-[#3b3b3b]">
-              <MicrophoneIcon className="w-12 h-12 text-gray-800 dark:text-purple-500" />
-            </div>
-            <h3 className='font-light text-xl text-center'>Audio</h3>
-          </div>
-          <div className="flex flex-grow rounded-2xl h-full py-10 gap-3 justify-center items-center flex-col dark:bg-[#292929] bg-gray-100">
-            <div className="flex justify-center items-center p-8 rounded-full bg-purple-300 dark:bg-[#3b3b3b]">
-              <BoltIcon className="w-12 h-12 text-gray-800 dark:text-purple-500" />
-            </div>
-            <h3 className='font-light text-xl text-center'>Daya</h3>
-          </div>
-        </div>
-      </div>
-      <div className="flex mt-20 gap-4 w-[calc(100%-1rem)] mx-auto sm:w-[calc(100%-2rem)] h-[60vh]">
+      <CategoryLP />
+      <div className="flex sm:flex-row flex-col mt-20 gap-4 w-[calc(100%-1rem)] mx-auto sm:w-[calc(100%-2rem)]">
         <div className="grid grid-cols-6 relative rounded-2xl flex-6/10 bg-gray-200 dark:bg-[#4b4b4b] overflow-hidden">
           <div className="new-label z-10 flex items-center justify-center gap-2 absolute top-5 -left-10 bg-gradient-to-r from-indigo-900 to-slate-900 px-10 transform -rotate-45">
             <span className='text-md md:text-lg font-["Ubuntu"] font-light text-white'>Diskon 10%</span>

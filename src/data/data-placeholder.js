@@ -6,7 +6,20 @@ import {
   CubeIcon,
   ArrowsUpDownIcon,
   EyeIcon,
+  CheckCircleIcon,
 } from '@heroicons/react/24/outline';
+import { FaRegCheckCircle } from "react-icons/fa";
+
+import smwatch from '../assets/p-smwatch.png'
+import ipad1 from '../assets/p-ipad-air.png'
+import ipad2 from '../assets/p-ipad-air2.png'
+import whiteairpods from '../assets/p-white-airpods.png'
+import galaxytab9 from '../assets/p-galaxy-tab9.png'
+import btspeaker from '../assets/p-bt-speaker.png'
+import btspeaker2 from '../assets/p-bt-speaker2.png'
+import s25u from '../assets/S25U.png'
+import gfit3 from '../assets/p-galaxy-fit3.png'
+
 
 export const topProducts = [
   {
@@ -97,5 +110,76 @@ export const cards = [
     color: 'bg-indigo-200',
     iconColor: 'text-indigo-800',
     icon: EyeIcon,
+  },
+];
+
+export const advantages = [
+  {
+    title: 'Kualitas Terjamin',
+    description: 'Produk kami telah melewati beberapa tahap pengujian untuk memastikan kualitasnya.',
+    icon: FaRegCheckCircle,
+  },
+  {
+    title: 'Pengiriman Cepat',
+    description: 'Kami menggunakan jasa pengiriman terbaik untuk menjaga keamanan dankecepatan pengiriman produk.',
+    icon: FaRegCheckCircle,
+  },
+  {
+    title: 'Pelayanan Pelanggan',
+    description: 'Tim kami siap membantu pelanggan dengan cepat dan profesional.',
+    icon: FaRegCheckCircle,
+  },
+  {
+    title: 'Pengembalian Barang',
+    description: 'Kami menyediakan sistem pengembalian barang dengan cepat dan mudah.',
+    icon: FaRegCheckCircle,
+  },
+];
+
+export const trendings = [
+  {
+    product: 'Smartwatch IP68',
+    price: 499000,
+    image: smwatch,
+  },
+  {
+    product: 'Speaker Bluetooth',
+    price: 399000,
+    image: btspeaker,
+  },
+  {
+    product: 'Ipad Air',
+    price: 7599000,
+    image: ipad1,
+  },
+  {
+    product: 'Airpods Pro',
+    price: 3599000,
+    image: whiteairpods,
+  },
+  {
+    product: 'Ipad Pro',
+    price: 10599000,
+    image: ipad2,
+  },
+  {
+    product: 'Samsung Galaxy Tab 9',
+    price: 5299000,
+    image: galaxytab9,
+  },
+  {
+    product: 'Bluetooth Speaker M6',
+    price: 910000,
+    image: btspeaker2,
+  },
+  {
+    product: 'Galaxy S25 Ultra',
+    price: 16969000,
+    image: s25u,
+  },
+  {
+    product: 'Samsung Galaxy Fit 3',
+    price: 3255000,
+    image: gfit3,
   },
 ];

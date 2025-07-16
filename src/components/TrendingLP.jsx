@@ -1,19 +1,9 @@
 import { ArrowRightIcon } from "@heroicons/react/24/outline"
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
+import { trendings } from "../data/data-placeholder";
+import { useCurrency } from "../hooks/use-currency";
 import 'swiper/css';
 import 'swiper/css/pagination';
-import smwatch from '../assets/p-smwatch.png'
-import ipad1 from '../assets/p-ipad-air.png'
-import ipad2 from '../assets/p-ipad-air2.png'
-import whiteairpods from '../assets/p-white-airpods.png'
-import galaxytab9 from '../assets/p-galaxy-tab9.png'
-import btspeaker from '../assets/p-bt-speaker.png'
-import btspeaker2 from '../assets/p-bt-speaker2.png'
-import s25u from '../assets/S25U.png'
-import gfit3 from '../assets/p-galaxy-fit3.png'
-
-
 import '../swiper-custom.css';
 
 const TrendingLP = () => {
@@ -28,43 +18,36 @@ const TrendingLP = () => {
         </div>
         <div className="">
             <Swiper
-                slidesPerView={5}
+                slidesPerView={1}
                 spaceBetween={15}
                 pagination={{
                 clickable: true,
                 }}
                 // modules={[Pagination]}
                 className="mySwiper cursor-grab"
+                breakpoints={{ 
+                    640: {
+                        slidesPerView: 2
+                    },
+                    1024: {
+                        slidesPerView: 5
+                    }
+                 }}
             >
-                <SwiperSlide>
-                    <img src={smwatch} alt='Smartwatch IP68' className='absolute top-0 w-100 h-auto' />
-                    <h3 className="text-lg font-['Ubuntu'] absolute bottom-10 text-gray-800 dark:text-gray-100">Smartwatch IP68</h3>
-                    <p className="text-md font-['Ubuntu'] absolute bottom-0 text-gray-800 dark:text-gray-100">Rp.499.000</p>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img src={btspeaker} alt='Casing HP' className='w-100 h-auto' />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img src={ipad1} alt='Casing HP' className='w-100 h-auto' />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img src={whiteairpods} alt='Casing HP' className='w-100 h-auto' />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img src={ipad2} alt='Casing HP' className='w-100 h-auto' />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img src={galaxytab9} alt='Casing HP' className='w-100 h-auto' />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img src={btspeaker2} alt='Casing HP' className='w-100 h-auto' />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img src={s25u} alt='Casing HP' className='w-100 h-auto' />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img src={gfit3} alt='Casing HP' className='w-100 h-auto' />
-                </SwiperSlide>
+                { 
+                    trendings.map((trending, index) => {
+                        const formattedPrice = useCurrency(trending.price);
+                        return (
+                            <SwiperSlide key={index}>
+                                <img src={trending.image} alt='Smartwatch IP68' className='absolute top-0 w-100 h-auto' />
+                                <div className="flex flex-col absolute top-2 md:-bottom-1 md:top-auto w-90 bg-[#29292990] rounded-xl p-3 gap-1">
+                                    <h3 className="text-lg md:text-md font-['Ubuntu'] text-gray-800 dark:text-gray-100">{trending.product}</h3>
+                                    <p className="text-lg font-['Ubuntu'] text-gray-800 dark:text-gray-100">{formattedPrice}</p>
+                                </div>
+                            </SwiperSlide>
+                        );
+                    })
+                }
             </Swiper>
         </div>
     </div>

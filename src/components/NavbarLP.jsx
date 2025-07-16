@@ -5,10 +5,15 @@ import { Link } from 'react-router-dom'
 import SearchModal from './SearchModal';
 import { CiMenuBurger } from "react-icons/ci";
 import { UserIcon } from '@heroicons/react/16/solid';
+import { useLocation } from 'react-router-dom';
+
 
 const NavbarLP = () => {
     const [isDarkMode, setIsDarkMode] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const location = useLocation();
+    const isShopPage = location.pathname === "/shop";
+
 
     useEffect(() => {
         const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
@@ -47,29 +52,33 @@ const NavbarLP = () => {
                         <li>
                             <Link className="block text-sm font-thin py-2 px-3 text-white bg-blue-600 rounded-sm lg:bg-transparent lg:text-blue-400 lg:p-0 lg:dark:text-blue-400" aria-current="page" to="/dashboard">Contact</Link>
                         </li>
+                        <li>
+                            <Link className="block text-sm font-thin py-2 px-3 text-white bg-blue-600 rounded-sm lg:bg-transparent lg:text-blue-400 lg:p-0 lg:dark:text-blue-400" aria-current="page" to="/shop">Belanja</Link>
+                        </li>
                     </ul>
                 </div>
-
                 <div className="hidden lg:flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-                    <SearchModal />
+                    {!isShopPage && <SearchModal />}
                     <button type="button" className="non-btn hover:border text-gray-800 dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-1 text-center inline-flex items-center me-2 dark:hover:border-purple-400 dark:focus:ring-purple-800">
                         <UserIcon className="w-6 h-6" />
                     </button>
                 </div>
 
                 {/* Mobile Menu Button */}
-                <div className="flex lg:hidden md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-                    <button 
-                        onClick={toggleMobileMenu}
-                        type="button" 
-                        className="non-btn inline-flex items-center w-10 h-10 justify-center text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" 
-                        aria-controls='mobile-menu' 
-                        aria-expanded={isMobileMenuOpen}
-                    >
-                        {/* <span className="sr-only">Open main menu</span> */}
-                        <CiMenuBurger className="w-6 h-6 text-gray-800 dark:text-gray-400" />
-                    </button>
-                </div>
+                {!isShopPage && (
+                    <div className="flex lg:hidden md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                        <button 
+                            onClick={toggleMobileMenu}
+                            type="button" 
+                            className="non-btn inline-flex items-center w-10 h-10 justify-center text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                            aria-controls='mobile-menu'
+                            aria-expanded={isMobileMenuOpen}
+                        >
+                            {/* <span className="sr-only">Open main menu</span> */}
+                            <CiMenuBurger className="w-6 h-6 text-gray-800 dark:text-gray-400" />
+                        </button>
+                    </div>
+                )}
 
                 {/* Mobile Menu */}
                 {isMobileMenuOpen && (
@@ -113,6 +122,15 @@ const NavbarLP = () => {
                                         onClick={toggleMobileMenu}
                                     >
                                         Contact
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link 
+                                        className="block text-sm font-thin py-2 px-3 text-gray-800 dark:text-white bg-transparent rounded-sm" 
+                                        to="/shop"
+                                        onClick={toggleMobileMenu}
+                                    >
+                                        Belanja
                                     </Link>
                                 </li>
                             </ul>
